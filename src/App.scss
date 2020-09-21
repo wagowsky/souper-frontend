@@ -1,0 +1,156 @@
+html {
+  font-size: 62.5%; /* 16px * 62.5 = 10px = 1rem */
+  box-sizing: border-box;
+  background: black;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font: 1.6rem Helvetica;
+  height: 100vh;
+  margin: 0;
+}
+.app {
+  height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+.header {
+  grid-area: header;
+  background-color: #203040;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+.brand a {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.header-links a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 1rem;
+}
+.header-links a:hover {
+  color: #ff8000;
+}
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+  background-color: #203040;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #ff8000;
+}
+
+// Home
+
+.products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  li {
+    list-style-type: none;
+
+    flex: 0 1 34rem;
+    margin: 1rem;
+    height: 50rem;
+    border-bottom: 0.1rem grey solid;
+  }
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // align-items: center;
+    height: 100%;
+    border: 1px solid yellow;
+  }
+  .productImage {
+    display:flex;
+    justify-content: center;
+    max-width: 80%;
+    
+    // max-height:rem;
+  }
+  .productName {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .productBrand {
+    font-size: 1.5rem;
+    color: grey;
+  }
+  .productPrice {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+
+
+// Menu
+
+.burger{
+  font-size: 3rem;
+  padding:.5rem;
+  background:none;
+  border:none;
+  color:white;
+  cursor: pointer;
+}
+
+.menu{
+  position:fixed;
+  transform:translateX(-100%);
+  width:30rem;
+  background:grey;
+  height:100%;
+  transition:.4s;
+}
+.open{
+  
+  transform:translateX(0%);
+}
+
+
+// Product-Page
+
+.productDetails{
+display:flex;
+justify-content: center;
+align-items: flex-start;
+flex-wrap: wrap;
+
+.productDetailsImg{
+  max-width:50%;
+
+}
+}
+
+ li{
+  text-decoration: none;
+}
