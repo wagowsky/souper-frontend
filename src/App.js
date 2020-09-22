@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { Route,Link } from 'react-router-dom';
 import './App.scss';
 import Home from './views/Home';
 import Product from './views/Product';
 import Cart from './views/Cart';
 import Login from './views/Login';
+import Register from './views/Register';
+import ProductUpload from './views/ProductUpload';
+
 
 function App() {
   const [burger, setBurger] = useState(false);
+const userLoggedIn=useSelector(state=>state.userLoginReducer.userInfo)
 
   return (
     <div className='app'>
@@ -21,11 +25,13 @@ function App() {
             >
               {burger ? <p>X</p> : <p> &#9776;</p>}
             </button>
-            <a href='index.html'>JuicyDreams</a>
+            <Link to="/">JuicyDreams</Link>
           </div>
           <div className='header-links'>
-            <a href='cart.html'>Cart</a>
-            <a href='signin.html'>Sign In</a>
+            <Link to="/cart">Cart</Link>
+
+            {userLoggedIn? <Link to="userprofile">{userLoggedIn.name}</Link>:<Link to="/login">Log In</Link>}
+            
           </div>
         </header>
 
@@ -43,6 +49,8 @@ function App() {
             <Route exact path='/' component={Home} />
             <Route path='/cart/:id?' component={Cart} />
             <Route path='/login' component={Login} />
+            <Route path='/register' component={Register} />
+            <Route path='/productupload' component={ProductUpload} />
            
           </div>
         </main>

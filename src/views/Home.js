@@ -12,7 +12,7 @@ const dispatch=useDispatch()
   const productList = useSelector((state) => state.productListReducer);
   const {loading,error,products}=productList
 
-
+console.log(products)
   useEffect(() => {
              dispatch(productListAction ());
              return () => {};
